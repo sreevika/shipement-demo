@@ -550,176 +550,177 @@ export default function HomePage() {
             </div>
           </div>
         </nav>
-        <div className="hero-banner">
-          <div className="container mid-container hero-banner__container">
-            <div className="hero-banner__container--title">
-              <div className="hero-banner__container-sub-title">{storeId}</div>
-              <div className="hero-banner__container-main-title">
-                Shipment Dashboard
+        <div className="body__content">
+          <div className="hero-banner">
+            <div className="container mid-container hero-banner__container">
+              <div className="hero-banner__container--title">
+                <div className="hero-banner__container-sub-title">{storeId}</div>
+                <div className="hero-banner__container-main-title">
+                  Shipment Dashboard
+                </div>
               </div>
-            </div>
-            <div className="hero-banner__container--date">
-              {lastDayDate} - {todayDate}
+              <div className="hero-banner__container--date">
+                {lastDayDate} - {todayDate}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="dashboard-at-glance container mid-container">
-          {/* use object/array to handle this */}
-          <button
-            className={
-              isCardSelected == "onTime"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("onTime")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("onTime")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {onTimeCount}
+          <div className="dashboard-at-glance container mid-container">
+            {/* use object/array to handle this */}
+            <button
+              className={
+                isCardSelected == "onTime"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("onTime")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("onTime")}
               </div>
-              <div className="dashboard-at-glance__card-title">On Time</div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "exception"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("exception")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("error")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {exceptionCount}
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {onTimeCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">On Time</div>
               </div>
-              <div className="dashboard-at-glance__card-title">Exceptions</div>
-            </div>
-          </button>
+            </button>
+            <button
+              className={
+                isCardSelected == "exception"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("exception")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("error")}
+              </div>
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {exceptionCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">Exceptions</div>
+              </div>
+            </button>
 
-          <button
-            className={
-              isCardSelected == "outForDelivery"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("outForDelivery")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("outbound")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {outForDeliveryCount}
+            <button
+              className={
+                isCardSelected == "outForDelivery"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("outForDelivery")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("outbound")}
               </div>
-              <div className="dashboard-at-glance__card-title">
-                Out for Delivery
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {outForDeliveryCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">
+                  Out for Delivery
+                </div>
               </div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "cancelled"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("cancelled")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("error")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {cancelledCount}
+            </button>
+            <button
+              className={
+                isCardSelected == "cancelled"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("cancelled")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("error")}
               </div>
-              <div className="dashboard-at-glance__card-title">
-                Shipment Cancelled
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {cancelledCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">
+                  Shipment Cancelled
+                </div>
               </div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "delayed"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("delayed")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("caution")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {delayedCount}
+            </button>
+            <button
+              className={
+                isCardSelected == "delayed"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("delayed")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("caution")}
               </div>
-              <div className="dashboard-at-glance__card-title">Delayed</div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "delivered"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("delivered")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("success")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {deliveredCount}
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {delayedCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">Delayed</div>
               </div>
-              <div className="dashboard-at-glance__card-title">Delivered</div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "deliveredToday"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("deliveredToday")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("success")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {deliveredTodayCount}
+            </button>
+            <button
+              className={
+                isCardSelected == "delivered"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("delivered")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("success")}
               </div>
-              <div className="dashboard-at-glance__card-title">
-                Delivered Today
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {deliveredCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">Delivered</div>
               </div>
-            </div>
-          </button>
-          <button
-            className={
-              isCardSelected == "early"
-                ? "selectedCard dashboard-at-glance__card"
-                : "dashboard-at-glance__card"
-            }
-            onClick={() => filterByBlock("early")}
-          >
-            <div className="dashboard-at-glance__card-icon">
-              {dashboardIconPack("success")}
-            </div>
-            <div className="dashboard-at-glance__card-stats">
-              <div className="dashboard-at-glance__card-count">
-                {earlyDeliveryCount}
+            </button>
+            <button
+              className={
+                isCardSelected == "deliveredToday"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("deliveredToday")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("success")}
               </div>
-              <div className="dashboard-at-glance__card-title">
-                Early Delivery
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {deliveredTodayCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">
+                  Delivered Today
+                </div>
               </div>
-            </div>
-          </button>
-        </div>
-        {/* <div className="GridPannel" >
+            </button>
+            <button
+              className={
+                isCardSelected == "early"
+                  ? "selectedCard dashboard-at-glance__card"
+                  : "dashboard-at-glance__card"
+              }
+              onClick={() => filterByBlock("early")}
+            >
+              <div className="dashboard-at-glance__card-icon">
+                {dashboardIconPack("success")}
+              </div>
+              <div className="dashboard-at-glance__card-stats">
+                <div className="dashboard-at-glance__card-count">
+                  {earlyDeliveryCount}
+                </div>
+                <div className="dashboard-at-glance__card-title">
+                  Early Delivery
+                </div>
+              </div>
+            </button>
+          </div>
+          {/* <div className="GridPannel" >
         <Grid container spacing={2} columns={16}>
           <Grid item xs={4}>
             <div
@@ -882,592 +883,593 @@ export default function HomePage() {
           </Grid>
         </Grid>
       </div > */}
-        <div className="filter-section container mid-container">
-          <div className="filter-section__header">
-            <button className="filter-section__button">
-              <div className="filter-section__icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z"
-                    fill="#694ED6"
-                  />
-                </svg>
-              </div>
-              <div className="filter-section-title">My filters</div>
-              <div className="filter-section-dp-icon">
-                <svg
-                  width="10"
-                  height="5"
-                  viewBox="0 0 10 5"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0L5 5L10 0H0Z" fill="black" fillOpacity="0.75" />
-                </svg>
-              </div>
-            </button>
+          <div className="filter-section container mid-container">
+            <div className="filter-section__header">
+              <button className="filter-section__button">
+                <div className="filter-section__icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z"
+                      fill="#694ED6"
+                    />
+                  </svg>
+                </div>
+                <div className="filter-section-title">My filters</div>
+                <div className="filter-section-dp-icon">
+                  <svg
+                    width="10"
+                    height="5"
+                    viewBox="0 0 10 5"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M0 0L5 5L10 0H0Z" fill="black" fillOpacity="0.75" />
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="shipping-list container mid-container">
-          <Paper>
-            <TableContainer sx={{ maxHeight: 500 }}>
-              <Table aria-label="shipping table" className="filter-table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell width="274">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          TRACKING NUMBER
-                        </div>
-                        <div className="filter-table__sort-icon ascending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left" className="status-cell">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">STATUS</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          SCHEDULED DELIVERY DATE
-                        </div>
-                        <div className="filter-table__sort-icon none">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          {" "}
-                          SCHEDULED DELIVERY TIME BEFORE
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">SHIPPER NAME</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          SHIPPER COMPANY
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">SHIPPER CITY</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">SHIPPER STATE</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">SHIP DATE</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          DELIVERY COMPANY
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">STORE ID</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT CONTACT NAME
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT COMPANY
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT ADDRESS
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT CITY
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT STATE
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          RECIPIENT COUNTRY
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          ACCOUNT NUMBER
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">FEDEX COMPANY</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          {" "}
-                          Number of Attempted Deliveries
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">DELIVERY DATE</div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                    <TableCell align="left">
-                      <button className="filter-table__header filter-table__header--button">
-                        <div className="filter-table__title">
-                          MASTER TRACKING NUMBER
-                        </div>
-                        <div className="filter-table__sort-icon desending">
-                          <svg
-                            width="10"
-                            height="5"
-                            viewBox="0 0 10 5"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 5L5 0L10 5H0Z"
-                              fill="black"
-                              fillOpacity="0.75"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rows.map((row) => (
-                    <TableRow key={row.trackingNumber}>
-                      <TableCell
-                        component="td"
-                        scope="row"
-                        align="left"
-                        className="tranckRow"
-                      >
-                        {row.trackingNumber}
+          <div className="shipping-list container mid-container">
+            <Paper>
+              <TableContainer sx={{ maxHeight: 500 }}>
+                <Table aria-label="shipping table" className="filter-table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell width="274">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            TRACKING NUMBER
+                          </div>
+                          <div className="filter-table__sort-icon ascending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
-                      <TableCell component="td" scope="row" align="left">
-                        {row.status == "Delivered" && (
-                          <>
-                            <img src={checkCircle} />
-                          </>
-                        )}
-                        {row.status == "In transit" && (
-                          <>
-                            <img src={transit} />{" "}
-                          </>
-                        )}{" "}
-                        {row.status == "Label" && (
-                          <>
-                            <img src={labelImg} />{" "}
-                          </>
-                        )}{" "}
-                        &nbsp; {row.status}
-                        <br />
-                        {row.status != "Delivered" && (
-                          <small>{row.statusDescription}</small>
-                        )}{" "}
+                      <TableCell align="left" className="status-cell">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">STATUS</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
                       <TableCell align="left">
-                        {row.scheduledDeliveryDate == null && <>-- </>}
-                        {row.scheduledDeliveryDate != null && (
-                          <>{row.scheduledDeliveryDate} </>
-                        )}
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            SCHEDULED DELIVERY DATE
+                          </div>
+                          <div className="filter-table__sort-icon none">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
                       <TableCell align="left">
-                        {row.scheduledDeliveryTimeBefore == null && <>-- </>}
-                        {row.scheduledDeliveryTimeBefore != null && (
-                          <> {row.scheduledDeliveryTimeBefore} </>
-                        )}{" "}
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            {" "}
+                            SCHEDULED DELIVERY TIME BEFORE
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
-                      <TableCell align="left">{row.shipperName}</TableCell>
-                      <TableCell align="left">{row.shipperCompany}</TableCell>
-                      <TableCell align="left">{row.shipperCity}</TableCell>
-                      <TableCell align="left">{row.shipperState}</TableCell>
-                      <TableCell align="left">{row.shipDate}</TableCell>
-                      <TableCell align="left">{row.deliveryCompany}</TableCell>
-                      <TableCell align="left">{row.storeId}</TableCell>
                       <TableCell align="left">
-                        {row.recipientContactName}
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">SHIPPER NAME</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
-                      <TableCell align="left">{row.recipientCompany}</TableCell>
-                      <TableCell align="left">{row.recipientAddress}</TableCell>
-                      <TableCell align="left">{row.recipientCity}</TableCell>
-                      <TableCell align="left">{row.recipientState}</TableCell>
-                      <TableCell align="left">{row.recipientCountry}</TableCell>
-                      <TableCell align="left">{row.accountNumber}</TableCell>
-                      <TableCell align="left">{row.fedExCompany}</TableCell>
-
                       <TableCell align="left">
-                        {row.numberOfAttemptedDeliveries}
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            SHIPPER COMPANY
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
-                      <TableCell align="left">{row.deliveredTime}</TableCell>
                       <TableCell align="left">
-                        {row.masterTrackingNumber}
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">SHIPPER CITY</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">SHIPPER STATE</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">SHIP DATE</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            DELIVERY COMPANY
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">STORE ID</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT CONTACT NAME
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT COMPANY
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT ADDRESS
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT CITY
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT STATE
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            RECIPIENT COUNTRY
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            ACCOUNT NUMBER
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">FEDEX COMPANY</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            {" "}
+                            Number of Attempted Deliveries
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">DELIVERY DATE</div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
+                      </TableCell>
+                      <TableCell align="left">
+                        <button className="filter-table__header filter-table__header--button">
+                          <div className="filter-table__title">
+                            MASTER TRACKING NUMBER
+                          </div>
+                          <div className="filter-table__sort-icon desending">
+                            <svg
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 5L5 0L10 5H0Z"
+                                fill="black"
+                                fillOpacity="0.75"
+                              />
+                            </svg>
+                          </div>
+                        </button>
                       </TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Paper>
+                  </TableHead>
+                  <TableBody>
+                    {rows.map((row) => (
+                      <TableRow key={row.trackingNumber}>
+                        <TableCell
+                          component="td"
+                          scope="row"
+                          align="left"
+                          className="tranckRow"
+                        >
+                          {row.trackingNumber}
+                        </TableCell>
+                        <TableCell component="td" scope="row" align="left">
+                          {row.status == "Delivered" && (
+                            <>
+                              <img src={checkCircle} />
+                            </>
+                          )}
+                          {row.status == "In transit" && (
+                            <>
+                              <img src={transit} />{" "}
+                            </>
+                          )}{" "}
+                          {row.status == "Label" && (
+                            <>
+                              <img src={labelImg} />{" "}
+                            </>
+                          )}{" "}
+                          &nbsp; {row.status}
+                          <br />
+                          {row.status != "Delivered" && (
+                            <small>{row.statusDescription}</small>
+                          )}{" "}
+                        </TableCell>
+                        <TableCell align="left">
+                          {row.scheduledDeliveryDate == null && <>-- </>}
+                          {row.scheduledDeliveryDate != null && (
+                            <>{row.scheduledDeliveryDate} </>
+                          )}
+                        </TableCell>
+                        <TableCell align="left">
+                          {row.scheduledDeliveryTimeBefore == null && <>-- </>}
+                          {row.scheduledDeliveryTimeBefore != null && (
+                            <> {row.scheduledDeliveryTimeBefore} </>
+                          )}{" "}
+                        </TableCell>
+                        <TableCell align="left">{row.shipperName}</TableCell>
+                        <TableCell align="left">{row.shipperCompany}</TableCell>
+                        <TableCell align="left">{row.shipperCity}</TableCell>
+                        <TableCell align="left">{row.shipperState}</TableCell>
+                        <TableCell align="left">{row.shipDate}</TableCell>
+                        <TableCell align="left">{row.deliveryCompany}</TableCell>
+                        <TableCell align="left">{row.storeId}</TableCell>
+                        <TableCell align="left">
+                          {row.recipientContactName}
+                        </TableCell>
+                        <TableCell align="left">{row.recipientCompany}</TableCell>
+                        <TableCell align="left">{row.recipientAddress}</TableCell>
+                        <TableCell align="left">{row.recipientCity}</TableCell>
+                        <TableCell align="left">{row.recipientState}</TableCell>
+                        <TableCell align="left">{row.recipientCountry}</TableCell>
+                        <TableCell align="left">{row.accountNumber}</TableCell>
+                        <TableCell align="left">{row.fedExCompany}</TableCell>
+
+                        <TableCell align="left">
+                          {row.numberOfAttemptedDeliveries}
+                        </TableCell>
+                        <TableCell align="left">{row.deliveredTime}</TableCell>
+                        <TableCell align="left">
+                          {row.masterTrackingNumber}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Paper>
+          </div>
         </div>
         <div className="footer__content">
           {/* d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5  */}
