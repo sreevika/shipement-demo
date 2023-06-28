@@ -884,7 +884,7 @@ export default function HomePage() {
         </Grid>
       </div > */}
           <div className="filter-section container mid-container">
-            <div className="filter-section__header active">
+            <div className="filter-section__header">
               <button className="filter-section__button">
                 <div className="filter-section__icon">
                   <svg
@@ -917,6 +917,7 @@ export default function HomePage() {
             <div className="filter-section__body">
               <div className="filter-section__body-level-1">
                 <ul className="filter-section-list">
+                  {/* add active class if its selected */}
                   <li className="filter-section-item active">
                     <button className="filter-section-btn">
                       <div className="filter-section-btn-icon">
@@ -1010,6 +1011,8 @@ export default function HomePage() {
               <div className="filter-section__body-level-2">
                 <ul className="filter-section-list">
                   <li className="filter-section-item">
+
+                    {/* add selected class if its selected */}
                     <button className="filter-section-btn selected">
                       <div className="filter-section-btn-icon">
                         <label className="checkbox">
