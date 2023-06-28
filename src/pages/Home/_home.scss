@@ -201,11 +201,7 @@
 
                     .active-icon {
                         display: block;
-                    }
-
-                    .filter-section-btn {
-                        border-right: 0;
-                    }
+                    } 
                 }
 
                 .filter-section-btn {
@@ -256,6 +252,9 @@
                     &.active {
                         .filter-section-btn {
                             background-color: var(--active-section-bg);
+                        }
+                        .filter-section-btn {
+                            border-right: 0;
                         }
                     }
 
