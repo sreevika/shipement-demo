@@ -69,10 +69,12 @@ html {
     display: flex;
     flex-direction: column;
 
-    >div, > div > div {
+    >div,
+    >div>div {
       display: flex;
       flex-direction: column;
       height: 100%;
+      overflow: auto;
     }
   }
 
@@ -368,6 +370,100 @@ html {
 }
 
 .body__content {
-  height: 100%;
   margin-bottom: 30px;
+}
+
+//checkbox
+.checkbox {
+  --checkbox-border-color: #707070;
+  --checkbox-border-active-color: #707070;
+  --checkbox-active-color: #0067B2;
+  --checkbox-bg-color: #fff;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  cursor: pointer;
+
+  .checkbox-input {
+    all: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &:checked~.checkbox-indicator {
+      border-color: var(--checkbox-active-color);
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &:disabled~.checkbox-indicator {
+      opacity: 0.5;
+    }
+  }
+
+  .checkbox-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--checkbox-border-color);
+    background-color: var(--checkbox-bg-color);
+
+    svg {
+      transition: 0.3s all;
+      opacity: 0;
+    }
+  }
+}
+
+//buttons
+:root {
+  --btn-primary-text: #fff;
+  --btn-primary-bg: #4BA2E2;
+  --btn-primary-bg-hover: #12466c;
+  --btn-secondary-bg: #BDBDBD;
+  --btn-secondary-bg-hover: #999999;
+}
+
+.btn {
+  &.btn-ship--primary {
+    font-size: 13px;
+    font-family: var(--bs-lato-font-family);
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--btn-primary-text);
+    min-width: 156px;
+    min-height: 43px;
+    background-color: var(--btn-primary-bg);
+    border-radius: 30px;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: var(--btn-primary-bg-hover);
+      color: var(--btn-primary-text);
+    }
+  }
+
+  &.btn-ship--secondary {
+    font-size: 13px;
+    font-family: var(--bs-lato-font-family);
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--btn-primary-text);
+    min-width: 156px;
+    min-height: 43px;
+    background-color: var(--btn-secondary-bg);
+    border-radius: 30px;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: var(--btn-secondary-bg-hover);
+    }
+  }
 }
